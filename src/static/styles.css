@@ -1,0 +1,516 @@
+/* Estilo de los enlaces del menú en la barra lateral */
+.sidebar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+    padding: 12px 20px;  /* Mayor tamaño para los botones */
+    border-radius: 8px;   /* Bordes redondeados */
+    transition: all 0.3s ease;  /* Transición suave */
+    margin-bottom: 10px;  /* Espacio entre los botones */
+    background-color: #c0392b;  /* Color de fondo de los botones */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Sombra sutil */
+}
+
+/* Efecto hover para los enlaces del menú */
+.sidebar nav ul li a:hover {
+    background-color: #e74c3c;  /* Color más oscuro en hover */
+    transform: translateX(5px);  /* Efecto de desplazamiento hacia la derecha */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);  /* Sombra más intensa */
+}
+
+/* Efecto focus - cuando un enlace de la barra lateral es seleccionado */
+.sidebar nav ul li a:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.5);  /* Resalta el borde con un color sutil */
+}
+
+/* Submenú */
+.sidebar nav ul li .submenu {
+    display: none;
+    padding-left: 20px;
+}
+
+.sidebar nav ul li:hover .submenu {
+    display: block;
+}
+
+.sidebar nav ul li .submenu li a {
+    font-size: 16px;  /* Tamaño más pequeño para los subenlaces */
+    padding: 10px 20px;  /* Espaciado adecuado */
+    border-radius: 8px;  /* Bordes redondeados */
+    background-color: #e74c3c;  /* Color de fondo de los subenlaces */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);  /* Sombra sutil */
+    transition: background-color 0.3s ease, transform 0.3s ease;  /* Transición suave */
+}
+
+/* Efecto hover para los subenlaces */
+.sidebar nav ul li .submenu li a:hover {
+    background-color: #c0392b;  /* Cambio de color en hover */
+    transform: translateX(5px);  /* Desplazamiento al pasar el cursor */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);  /* Sombra más intensa */
+}
+
+/* Agregar una animación sutil al cargar la barra lateral */
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-250px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #c0392b;
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    animation: slideInLeft 0.5s ease-out;
+}
+
+/* Establecer la tipografía global */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Animación de entrada para el contenedor */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación para la barra lateral */
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-250px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animación para los enlaces y el contenido principal */
+@keyframes fadeInLinks {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Animación para la imagen de inicio */
+@keyframes slideDownImage {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px); /* Empuja la imagen hacia arriba */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* La imagen vuelve a su posición normal */
+    }
+}
+
+/* Contenedor principal que incluye la barra lateral y el contenido */
+.container {
+    display: flex;
+    min-height: 100vh;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Barra lateral de navegación */
+.sidebar {
+    width: 250px;
+    background-color: #c0392b;
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    animation: slideInLeft 0.5s ease-out;
+}
+
+/* Logo de la barra lateral */
+.sidebar .logo h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #fff;
+}
+
+/* Estilo del menú de navegación */
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin: 10px 0;
+}
+
+.sidebar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    animation: fadeInLinks 1s ease-out;
+}
+
+.sidebar nav ul li a:hover {
+    background-color: #e74c3c;
+}
+
+/* Estilo para los submenús */
+.sidebar nav ul li .submenu {
+    display: none;
+    padding-left: 20px;
+}
+
+.sidebar nav ul li:hover .submenu {
+    display: block;
+}
+
+.sidebar nav ul li .submenu li {
+    margin: 5px 0;
+}
+
+/* Contenido principal */
+.main {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: white;
+    animation: fadeIn 1s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Cambiado de center a flex-start */
+    text-align: center;
+    height: 80vh; /* Ajustamos la altura para que esté más arriba */
+}
+
+/* Centrar el contenido del inicio (ligeramente arriba del centro) */
+.main .content {
+    animation: fadeIn 1s ease-out; /* Animación de desvanecimiento */
+    margin-top: 30px; /* Aumentamos el margen superior para elevar el contenido */
+}
+
+/* Imagen de inicio con animación de deslizamiento */
+.main .content img {
+    animation: slideDownImage 1s ease-out;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Títulos y texto dentro del contenido principal */
+h1, h2, h3, h4 {
+    font-weight: 600;
+    color: #c0392b;
+    animation: fadeInLinks 1s ease-out;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+/* Enlaces dentro del contenido principal */
+a {
+    color: #c0392b;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #e74c3c;
+}
+
+/* Estilos de formularios */
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px 20px;  /* Aumento de padding para mayor confort */
+    margin: 10px 0;
+    border: 1px solid #e74c3c;
+    border-radius: 8px;  /* Bordes más redondeados */
+    box-sizing: border-box;
+    background-color: #fce9e7;  /* Fondo suave rosado */
+    animation: fadeInLinks 1s ease-out;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #c0392b;  /* Borde más resaltado al hacer foco */
+    box-shadow: 0 0 5px rgba(231, 76, 60, 0.6);  /* Sombra suave de enfoque */
+}
+
+input[type="submit"] {
+    background-color: #c0392b;
+    color: white;
+    border: none;
+    padding: 12px 24px;  /* Aumento de tamaño para mejorar la experiencia */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+input[type="submit"]:hover {
+    background-color: #e74c3c;
+    transform: translateY(-2px);  /* Efecto de elevación */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);  /* Sombra más intensa */
+}
+
+input[type="submit"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.5);  /* Resaltado cuando el botón tiene foco */
+}
+
+input[type="submit"]:active {
+    background-color: #c0392b;
+    transform: translateY(1px);  /* Efecto de presión al hacer clic */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);  /* Sombra más suave */
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .main {
+        padding: 10px;
+    }
+
+    .sidebar nav ul li {
+        text-align: center;
+    }
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .main {
+        padding: 10px;
+    }
+
+    .sidebar nav ul li {
+        text-align: center;
+    }
+}
+
+/* Estilo para los botones (Calcular, Agregar, etc.) */
+button, input[type="submit"] {
+    background-color: #c0392b;  /* Rojo brillante */
+    color: white;
+    border: none;
+    padding: 12px 24px;  /* Tamaño del botón */
+    border-radius: 8px;   /* Bordes redondeados */
+    font-size: 16px;  /* Tamaño de la fuente */
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;  /* Transición suave */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Sombra sutil */
+}
+
+/* Efecto hover - cuando el cursor pasa sobre el botón */
+button:hover, input[type="submit"]:hover {
+    background-color: #e74c3c;  /* Rojo más oscuro */
+    transform: translateY(-2px);  /* Efecto de elevación */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);  /* Sombra más intensa */
+}
+
+/* Efecto focus - cuando el botón es seleccionado o tiene foco */
+button:focus, input[type="submit"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.5);  /* Resalta el borde cuando se hace foco */
+}
+
+/* Efecto active - cuando se hace clic en el botón */
+button:active, input[type="submit"]:active {
+    background-color: #c0392b;  /* Color rojo cuando se presiona */
+    transform: translateY(1px);  /* Efecto de presión */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);  /* Sombra más suave */
+}
+.welcome-image {
+    max-width: 90%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    animation: zoomIn 1s ease-in-out;
+}
+.welcome-image2 {
+    max-width: 60%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    animation: zoomIn 1s ease-in-out;
+}
+
+.welcome-image3 {
+    max-width: 80%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    animation: zoomIn 1s ease-in-out;
+}
+
+.welcome-image4 {
+    max-width: 35%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    animation: zoomIn 1s ease-in-out;
+}
+
+/* Contenido principal */
+.main {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+    animation: fadeIn 1s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background-color: #ffcccc; /* Fondo suave rosado */
+    background-image: radial-gradient(circle, rgba(255, 0, 0, 0.1) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(255, 0, 0, 0.1) 0%, transparent 100%);
+    background-size: 30px 30px, 100% 1px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos generales para la tabla */
+table {
+    width: 100%; /* Ancho completo de la tabla */
+    max-width: 1200px; /* Ancho máximo para evitar que se estire demasiado */
+    border-collapse: collapse;
+    margin: 20px auto; /* Centrar la tabla */
+    font-family: Arial, sans-serif;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezado de la tabla */
+thead {
+    background-color: #D32F2F; /* Rojo oscuro */
+    color: white;
+}
+
+th {
+    padding: 12px 20px; /* Más padding horizontal para hacer las celdas más anchas */
+    text-align: left;
+    font-weight: bold;
+    font-size: 16px; /* Aumentar el tamaño de la fuente */
+}
+
+/* Filas de la tabla */
+tbody tr {
+    background-color: #FFCDD2; /* Rojo muy claro */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #FFEBEE; /* Rojo pálido */
+}
+
+tbody tr:hover {
+    background-color: #FF8A80; /* Rojo más intenso al pasar el cursor */
+}
+
+/* Celdas de la tabla */
+td {
+    padding: 12px 20px; /* Más padding horizontal para hacer las celdas más anchas */
+    border: 1px solid #FFABAB; /* Rojo claro */
+    text-align: left;
+    font-size: 16px; /* Aumentar el tamaño de la fuente */
+}
+
+/* Bordes en la tabla */
+th, td {
+    border: 1px solid #FFABAB; /* Rojo claro */
+}
+
+/* Estilo cuando no hay datos en la tabla */
+table p {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+}
+
+/* Ajustes para tablas pequeñas en dispositivos móviles */
+@media (max-width: 600px) {
+    table {
+        width: 100%; /* Asegura que la tabla ocupe todo el espacio disponible */
+    }
+
+    th, td {
+        padding: 10px 15px; /* Ajuste de padding para pantallas pequeñas */
+        font-size: 14px; /* Aumentar el tamaño de fuente en pantallas más pequeñas */
+    }
+}
+.logo {
+    display: flex;
+    align-items: center; /* Alinea el logo y el texto verticalmente */
+}
+
+.logo-img {
+    width: 60px;  /* Ajusta el tamaño del logo */
+    height: 60px;
+    margin-right: 10px;  /* Espacio entre el logo y el texto */
+}
+.watermark {
+    position: absolute;
+    bottom: 0px; /* Ajusta la distancia desde el fondo */
+    left: 10px;   /* Ajusta la distancia desde el borde izquierdo */
+    font-size: 12px; /* Tamaño del texto */
+    color: rgba(0, 0, 0, 0.2); /* Color gris con transparencia */
+    font-style: italic; /* Estilo de fuente en cursiva */
+    user-select: none; /* Evita que el texto sea seleccionado */
+}
