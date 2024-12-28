@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Agregar Puente{% endblock %}
+
+{% block content %}
+<section id="agregar-puente" class="section-content">
+    <h2>Agregar Nuevo Puente</h2>
+    <form id="puenteForm">
+        <input type="text" placeholder="Nombre" name="nombre" required>
+        <!-- Lista desplegable para seleccionar el material -->
+        <select id="material_id" name="material_id" required>
+            <option value="">Seleccione un material</option>
+            <!-- Las opciones se llenarán mediante JavaScript -->
+        </select>
+        <input type="number" placeholder="Longitud (m)" name="longitud" required>
+        <input type="number" placeholder="Ancho (m)" name="ancho" required>
+        <input type="number" placeholder="Altura (m)" name="altura" required>
+        <input type="number" placeholder="Carga Máxima (Tn)" name="carga_maxima" required>
+        <button type="submit">Agregar Puente</button>
+    </form>
+</section>
+{% endblock %}

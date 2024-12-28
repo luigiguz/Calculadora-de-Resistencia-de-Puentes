@@ -1,1 +1,11 @@
+{% extends "base.html" %}
 
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+<section id="welcome" class="section-content">
+    <h2>¡Bienvenido!</h2>
+    <p>Explora las opciones en el menú para gestionar materiales, puentes y realizar cálculos de resistencia de un puente.</p>
+    <img src="{{ url_for('static', filename='bridge.png') }}" alt="Imagen de Puente" class="welcome-image">
+</section>
+{% endblock %}

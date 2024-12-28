@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Realizar Cálculo{% endblock %}
+
+{% block content %}
+<section id="realizar-calculo" class="section-content">
+    <h2>Realizar Cálculo</h2>
+    <form id="calculoForm">
+        <!-- Campo para seleccionar el puente -->
+        <label for="puente_id">Seleccionar Puente:</label>
+        <select id="puente_id" name="puente_id"> 
+            <option value="">Selecciona un puente</option> 
+            <!-- Esta opción se reemplazará con los puentes disponibles -->
+        </select>
+        
+        <!-- Campo para el Factor de Seguridad -->
+        <label for="factor_seguridad">Factor de Seguridad (1.5):</label>
+        <input type="number" placeholder="Factor de Seguridad (1.5)" name="factor_seguridad" step="0.1" min="1" max="60" required>
+        
+        <!-- Botón para enviar el formulario -->
+        <button type="submit">Calcular</button>
+    </form>
+</section>
+{% endblock %}

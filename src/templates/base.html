@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Calculadora de Resistencia{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Barra Lateral -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo-img">
+                <h1>Calculadora</h1>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="{{ url_for('inicio') }}">Inicio</a></li>
+                    <li>
+                        <a href="{{ url_for('inicio_materiales') }}">Materiales</a>
+                        <ul class="submenu">
+                            <li><a href="{{ url_for('agregar_material') }}">Agregar Material</a></li>
+                            <li><a href="{{ url_for('listar_materiales_html') }}">Listar Materiales</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('inicio_puentes') }}">Puentes</a>
+                        <ul class="submenu">
+                            <li><a href="{{ url_for('agregar_puente') }}">Agregar Puente</a></li>
+                            <li><a href="{{ url_for('listar_puentes_html') }}">Listar Puentes</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('inicio_calculos') }}">Cálculos</a>
+                        <ul class="submenu">
+                            <li><a href="{{ url_for('realizar_calculo') }}">Realizar Cálculo</a></li>
+                            <li><a href="{{ url_for('listar_calculos_html') }}">Listar Cálculos</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Marca de agua -->
+            <div class="watermark">
+                <p>Desarrolladora: Fabiana Malpica</p>
+            </div>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <main class="main">
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Agregar Material{% endblock %}
+
+{% block content %}
+<section id="agregar-material" class="section-content">
+    <h2>Agregar Nuevo Material</h2>
+    <form id="materialForm">
+        <input type="text" placeholder="Nombre" name="nombre" required>
+        <input type="number" placeholder="Resistencia Tracción (MPa)" name="resistencia_traccion" required>
+        <input type="number" placeholder="Módulo Elasticidad (GPa)" name="modulo_elasticidad" required>
+        <input type="number" placeholder="Densidad (kg/m³)" name="densidad" required>
+        <button type="submit">Agregar Material</button>
+    </form>
+</section>
+{% endblock %}

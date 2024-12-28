@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Materiales{% endblock %}
+
+{% block content %}
+<section id="material" class="section-content">
+    <h2>Materiales</h2>
+    <p>En esta sección puedes gestionar materiales, agregarlos o listarlos.</p>
+    <img src="{{ url_for('static', filename='material.png') }}" alt="Imagen de Material" class="welcome-image2">
+</section>
+{% endblock %}
